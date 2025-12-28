@@ -1,3 +1,19 @@
+Metadata-Version: 2.4
+Name: console-task-app
+Version: 0.1.0
+Summary: Console-based task management application
+Author-email: Hackathon Team <team@example.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: typing_extensions>=4.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=4.0.0; extra == "dev"
+
 # Console Task App
 
 A simple console-based task management application built with Python.
