@@ -9,6 +9,7 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.13
 Description-Content-Type: text/markdown
 Requires-Dist: typing_extensions>=4.0.0
+Requires-Dist: rich>=13.0.0
 Provides-Extra: dev
 Requires-Dist: pytest>=7.0.0; extra == "dev"
 Requires-Dist: black>=22.0.0; extra == "dev"

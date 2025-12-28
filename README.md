@@ -1,15 +1,16 @@
 # Console Task App
 
-A simple console-based task management application built with Python.
+A simple console-based task management application built with Python featuring a modern Rich UI.
 
 ## Features
 
 - Add tasks with title and optional description
-- View all tasks with ID, Title, Status, and Description
+- View all tasks with ID, Title, Status, and Description in a rich table format
 - Update existing tasks
 - Delete tasks
-- Mark tasks as complete/incomplete
+- Mark tasks as complete/incomplete with visual indicators
 - Clean exit functionality
+- Enhanced user interface with Rich styling
 
 ## Installation
 
