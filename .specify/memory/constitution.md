@@ -1,55 +1,44 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report:
+     Version change: N/A -> 1.0.0
+     Modified principles: N/A (new constitution)
+     Added sections: All principles and governance as specified
+     Removed sections: N/A
+     Templates requiring updates: N/A
+     Follow-up TODOs: None
+-->
+
+# Speckit Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Tech Stack Requirements
+All projects MUST use Python 3.13+ and the UV package manager. This ensures consistency across the development environment and leverages the latest language features and performance improvements. The choice of UV provides faster dependency resolution and installation compared to traditional tools.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Clean Architecture Implementation
+The system MUST follow Clean Architecture principles with strict separation between the Presentation Layer (CLI input/print) and the Logic Layer (Service/Models). This ensures testability, maintainability, and clear boundaries between concerns. The presentation layer should only handle user interaction and output formatting, while the logic layer contains all business rules and domain logic.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Storage Strategy
+All data storage MUST use in-memory lists for the current phase. No database systems should be implemented at this stage. This simplifies development and allows for rapid prototyping while keeping the focus on core functionality. Database integration will be considered in future phases when persistence becomes a requirement.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Coding Standards Compliance
+All code MUST comply with PEP 8 standards, include type hinting for all functions, and have docstrings for all classes. This ensures code quality, readability, and maintainability across the project. Type hints provide better IDE support and help catch errors early in the development process.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Workflow Governance
+No code may be written without a defined Task ID. Every piece of functionality must be traced back to an explicit task that defines its purpose, acceptance criteria, and requirements. This ensures accountability, proper planning, and traceability throughout the development process.
 
-### [PRINCIPLE_6_NAME]
+### Testing Requirements
+All logic MUST be testable via pytest. Every business rule and function should be designed with testability in mind. Unit tests are mandatory for all business logic, and integration tests should verify the interaction between components. Test-driven development is encouraged to ensure comprehensive coverage.
 
+## Development Constraints
 
-[PRINCIPLE__DESCRIPTION]
+The project follows a hackathon-driven development approach with specific phases. All development must align with the current phase requirements and not implement features beyond the current scope. Focus on delivering working functionality over comprehensive documentation during the hackathon phase.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Workflow Requirements
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+The development process requires that each task be clearly defined with acceptance criteria before implementation begins. Code reviews are mandatory for all pull requests, and all tests must pass before merging. Continuous integration practices should be followed to ensure code quality and system stability.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all development activities for the Speckit project. All team members must adhere to these principles, and any deviation requires explicit approval from the project guardian. Amendments to this constitution require documentation of the change, its impact, and approval from the core team.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-28 | **Last Amended**: 2025-12-28
