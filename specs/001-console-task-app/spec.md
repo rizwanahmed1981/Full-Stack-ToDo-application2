@@ -125,7 +125,7 @@ User wants to quit the console application loop cleanly. This provides a proper 
 
 - **FR-001**: System MUST allow users to add a new task with a title and optional description
 - **FR-002**: System MUST validate that the task title is not empty when adding a task
-- **FR-003**: System MUST assign a unique ID to each task upon creation
+- **FR-003**: System MUST assign a unique, user-friendly ID to each task upon creation in the format `tid` followed by a padded number (e.g., `tid01`, `tid02`, `tid10`)
 - **FR-004**: System MUST display all tasks with their ID, Title, Status, and Description
 - **FR-005**: System MUST allow users to mark tasks as complete/incomplete with visual indicators [x] or [ ]
 - **FR-006**: System MUST allow users to update existing tasks by ID

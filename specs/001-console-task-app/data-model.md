@@ -3,14 +3,14 @@
 ## Task Entity
 
 ### Fields
-- `id: str` - Unique identifier for the task (UUID string)
+- `id: str` - Unique, user-friendly identifier for the task in format `tid` followed by a padded number (e.g., `tid01`, `tid02`, `tid10`)
 - `title: str` - Required title of the task (non-empty validation required)
 - `description: str` - Optional description of the task (can be empty)
 - `completed: bool` - Status of the task (True for complete, False for incomplete)
 
 ### Validation Rules
 - Title cannot be empty or None
-- ID must be unique within the system
+- ID must be unique within the system and follow `tid` prefix with padded number format
 - Description can be empty string if not provided
 
 ### State Transitions

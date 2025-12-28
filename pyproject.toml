@@ -1,7 +1,29 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "hackathoon2"
+name = "console-task-app"
 version = "0.1.0"
-description = "Add your description here"
+description = "Console-based task management application"
+authors = [{name = "Hackathon Team", email = "team@example.com"}]
 readme = "README.md"
-requires-python = "==3.14.2"
-dependencies = []
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "typing_extensions>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+]
+
+[project.scripts]
+taskapp = "src.main:main"
