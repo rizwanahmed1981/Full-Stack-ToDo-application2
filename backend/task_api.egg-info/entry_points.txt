@@ -1,0 +1,2 @@
+[console_scripts]
+taskapi = app.main:main

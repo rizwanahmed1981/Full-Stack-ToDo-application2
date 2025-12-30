@@ -1,25 +1,13 @@
-"""Data models for the Console Task App."""
-
-from dataclasses import dataclass
+from sqlmodel import SQLModel, Field
 from typing import Optional
-import uuid
+from datetime import datetime
 
-
-@dataclass
-class Task:
-    """Represents a task in the task management system."""
-
-    id: str
-    title: str
-    description: str
-    completed: bool
-
-    def __post_init__(self):
-        """Validate task fields after initialization."""
-        if not self.title:
-            raise ValueError("Task title cannot be empty")
-
-
-def create_task_id() -> str:
-    """Generate a unique ID for a task."""
-    return str(uuid.uuid4())
+class Task(SQLModel, table=True):
+    """Task model representing a task in the system"""
+    id: Optional[int] = Field(default=None, primary_key=True)
+    title: str = Field(max_length=200)
+    description: Optional[str] = Field(default=None)
+    completed: bool = Field(default=False)
+    user_id: Optional[int] = Field(default=None)
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    updated_at: datetime = Field(default_factory=datetime.utcnow)
